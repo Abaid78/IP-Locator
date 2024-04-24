@@ -12,15 +12,21 @@ const options = {
 
 // Select elements from the DOM
 let ip_type = document.querySelectorAll(".ip-type h2");
+let inputField = document.querySelector("input");
 
 // Function to fetch data from the API
 async function fetchData(apiUrl) {
   try {
-    const response = await fetch(url, options);
+    const response = await fetch(apiUrl, options);
     const data = await response.json();
-    displayData(data); // Call displayData function to show the data
+    if (data.status != 200) {
+      alert("Invalid IP");
+      return;
+    } else {
+      displayData(data);
+    }
   } catch (error) {
-    console.error(error);
+    alert("An error occurred while fetching data");
   }
 }
 
@@ -32,7 +38,6 @@ const displayData = (data) => {
   let flag = document.querySelector(".flag img");
   let longitude = document.querySelector("#longitude");
   let latitude = document.querySelector("#latitude");
-
   // Information to display
   let ipDetails = [
     `ISP: ${data.org}`,
@@ -56,19 +61,17 @@ const displayData = (data) => {
   latitude.innerText = `Latitude: ${data.latitude}`;
   longitude.innerText = `Longitude: ${data.longitude}`;
   flag.src = data.flag;
-
-  console.log(data); // Log the data to console
+  // Update IP type display
+  ip_type[0].innerText = `IPv4: ${data.ip}`;
+  console.log(data.status); // Log the data to console
 };
 
 // Select search button and input field
 let searchBtn = document.querySelector("#searchBtn");
-let inputField = document.querySelector("input");
 
 // Event listener for search button click
 searchBtn.addEventListener("click", () => {
   if (inputField.value != "") {
-    // Update IP type display
-    ip_type[0].innerText = `IPv4: ${inputField.value}`;
     // Create new URL with user input
     const newURL = `https://find-any-ip-address-or-domain-location-world-wide.p.rapidapi.com/iplocation?ip=${inputField.value}&apikey=873dbe322aea47f89dcf729dcc8f60e8`;
     // Call fetchData function with the new URL
