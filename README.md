@@ -13,6 +13,7 @@ The application will fetch and display the location details for the entered IP a
 # Dependencies:
 - `Fetch API`: Used for making HTTP requests to the API endpoint.
 - `RapidAPI`: Provides access to the "Find Any IP Address or Domain Location World Wide" API.
-
+# View Live
+https://abaid78.github.io/IP-Locator/
 # Contributing
 Contributions are welcome! If you find any bugs or have suggestions for improvement, please open an issue or create a pull request
