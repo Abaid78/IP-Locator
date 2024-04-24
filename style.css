@@ -1,0 +1,88 @@
+*{
+  margin: 0px;
+  box-sizing: border-box;
+}
+.main{
+  display: grid;
+}
+.search-bar {
+  margin: 20px;
+  text-align: center;
+}
+.search-bar input {
+  outline: none;
+  border: none;
+  border: none;
+  box-shadow: 1px 1px 4px gray;
+  height: 40px;
+  width: 300px;
+}
+.search-bar button {
+  outline: none;
+  border: none;
+  height: 40px;
+  width: 100PX;
+  box-shadow: 1px 1px 4px gray;
+  background-color: #5BBCFF;
+  transition: background 0.5s;
+}
+.search-bar button:hover{
+  background-color: #a5d2f1;}
+
+.container {
+  background-color: #1679AB;
+  padding: 50px;
+}
+.container h1{
+  font-size: 1.4em;
+}
+.heading{
+  font-size: 1em;
+}
+.ip-type{
+  width: 50vw;
+  margin: auto;
+
+}
+.ip-type h2{
+  background-color: #5BBCFF;
+  margin-top: 4px;
+  font-size: 1.3em;
+  padding: 5px;
+  color: wheat;
+}
+
+.main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  
+}
+.main h2{
+  font-size: 1em;
+  color:wheat;
+  
+}
+.main h1{
+font-size: 1.3em;
+}
+.ip-country-detail, .ip-detail{
+ 
+  width: 300px;
+  padding: 20px;
+  background-color: #5BBCFF;
+  
+}
+.location{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.flag{
+  padding: 4px;
+  border: 2px solid;
+  text-align: center;
+}
