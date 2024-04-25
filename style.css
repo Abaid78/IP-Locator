@@ -2,9 +2,6 @@
   margin: 0px;
   box-sizing: border-box;
 }
-.main{
-  display: grid;
-}
 .search-bar {
   margin: 20px;
   text-align: center;
@@ -16,6 +13,7 @@
   box-shadow: 1px 1px 4px gray;
   height: 40px;
   width: 300px;
+  padding: 10px;
 }
 .search-bar button {
   outline: none;
